@@ -1,3 +1,301 @@
-body{
-	background-color: #FFF;
+@charset "UTF-8";
+/* CSS Document */
+@font-face
+{
+	font-family: White-Rabbit;
+	src: url('whitrabt-webfont.eot'),
+		 url('whitrabt-webfont.woff'),
+		 url('whitrabt-webfont.svg'),
+		 url('whitrabt-webfont.ttf');
+}
+body 
+{
+	font-family: Arial;
+	font-size: 14px;
+	line-height: 18px;
+	color: #2b2b2b;
+}
+
+/*HEADER*/
+
+div#account_container
+{
+	background-color: #292929;
+	padding: 5px 0px 5px 0px;
+}
+div#account_nav
+{
+	background-color: #292929;
+}
+div#log_in
+{
+	float: right;
+	font-size: 12px;
+	background-color: #343434;
+	margin: 0px;
+	padding: 0px;
+}
+div#log_in a
+{
+	color: #35bfff;
+	text-decoration: none;
+	margin: 0px;
+	padding: 0px;
+}
+div#log_in a:hover
+{
+	color: #f0f0f0;
+}
+div#log_in ul 
+{
+	margin: 0px;
+	padding: 0px;
+}
+div#log_in ul li
+{
+	float: left;
+	margin: 0px;
+	list-style: none;
+	padding: 0px 10px 0px 10px;
+	
+}
+div#header_container
+{
+	background-image: url('../img/header_bg.png');
+	height: 90px;
+	background-color: #f0f0f0;
+	margin-bottom: 10px;
+}
+div#logo
+{
+	display: block;
+	float: left;
+	height: 46px;
+	width: 227px;
+	background-image: url('../img/oojo_logo.png');
+	margin-top: 20px;
+}
+div#logo:hover
+{
+	display: block;
+	float: left;
+	height: 46px;
+	width: 227px;
+	background-image: url('../img/oojo_logo_hover.png');
+	margin-top: 20px;
+}
+div#logo a 
+{
+	display: block;
+	height: 59px;
+	width: 230px;
+}
+div#main_nav
+{
+	float: left;
+	margin: 52px 0px 0px 50px;
+}
+div#main_nav ul li 
+{
+	font-family: White-Rabbit;
+	font-size: 24px;
+	float: left;
+	margin: 0px;
+	list-style: none;
+	text-transform: uppercase;
+	
+}
+div#main_nav a
+{
+	color: #000;
+	text-decoration: none;
+	padding: 51px 10px 20px 10px;
+	border-left: 1px solid #fff;
+	
+}
+div#main_nav a:hover
+{
+	color: #f0f0f0;
+	background-color: #70d2ff;
+}
+.last_link
+{
+	border-right: 1px solid #fff;
+	
+}
+div#search
+{
+	float: right;
+	margin: 33px 0px 0px 0px;
+}
+#search_form input
+{
+	width: 300px;
+	height: 30px;
+	font-size: 18px;
+	color: #252525;
+	border: 3px solid #35bfff;
+	padding: 0px 10px 0px 10px;
+	float: left;
+}
+
+#submit.submit
+{
+	height: 36px;
+	width: 30px;
+	border: 0px;
+	background-color: #35bfff;
+	background-image: url('../img/search_button.jpg');
+	float: left;
+}
+
+/*SLIDER*/
+div#slider
+{
+	margin-bottom: -35px;
+}
+.slides_container {
+	width:960px;
+	overflow:hidden;
+	position:relative;
+	display:none;
+}
+.slides_container a {
+	width:960px;
+	height:365px;
+	display:block;
+}
+.slides_container a img {
+	display:block;
+}
+#slides .next,#slides .prev {
+	float:left;
+	position:relative;
+	width:28px;
+	height:46px;
+	display:block;
+	z-index:101;
+}
+#slides .prev {
+	float: left;
+	top: -220px;
+}
+#slides .next {
+	float: right;
+	top:-220px;
+	left: 21px;
+}
+.pagination {
+	margin:0px auto;
+}
+.pagination li {
+	float:left;
+	margin:0px;
+	list-style:none;
+}
+.pagination li a {
+	display:block;
+	height:0px;
+	float:left;
+	overflow:hidden;
+}
+
+/*SIDE BAR*/
+
+div#sidebar .sidebar_box
+{
+	background-color: #f0f0f0;
+	margin-bottom: 10px;
+	padding: 5px 10px 5px 10px;
+	border-bottom: 2px solid #292929;
+}
+.sidebar_box p
+{
+	margin: 0px;
+}
+.sidebar_box a 
+{
+	display: block;
+	color: #292929;
+	text-decoration: none;
+}
+.sidebar_box a:hover
+{
+	color: #35bfff;
+}
+img.center
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+/*CONTENT*/
+h2
+{
+	font-family: White-Rabbit;
+	color: #35bfff;
+	font-size: 24px;
+	text-transform: uppercase;
+	border-bottom: 1px solid;
+}
+.featured_box
+{
+	background-color: #f0f0f0;
+	margin-bottom: 10px;
+	padding: 10px 10px 10px 10px;
+	border-bottom: 2px solid #292929;
+}
+.product_box
+{
+	background-color: #f0f0f0;
+	margin-bottom: 10px;
+	padding: 10px 5px 10px 5px;
+	width: 293px;
+	border-bottom: 2px solid #292929;
+
+}
+div.catalog_product
+{
+	float: left;
+	margin: 20px;
+}
+img.right
+{
+	float: right;
+}
+h4
+{
+	color: #35bfff;
+	margin-bottom: 0px;
+}
+/*FOOTER*/
+div#footer_container
+{
+	background-image: url('../img/footer_bg.png');
+	height: 100px;
+	padding: 20px;
+	background-color: #f0f0f0;
+}
+div#footer
+{
+	color: #f0f0f0;
+}
+.footer_box
+{
+	width: 150px;
+	float: left;
+}
+.footer_box a
+{
+	color: #35bfff;
+	text-decoration: none;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+}
+.footer_box a:hover
+{
+	color: #f0f0f0;
 }
