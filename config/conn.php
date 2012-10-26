@@ -1,7 +1,7 @@
 <?php
+$server = "localhost";
+$user_name = "root";
+$pass = "";
 
-$db=mysql_connect("sulley.cah.ucf.edu", "ju773928", "knights123!");
+$db=mysql_connect($server, $user_name, $pass);
 mysql_select_db("ju773928", $db);
-$db = mysql_select_db("ju773928") or print "connect failed because ".mysql_error();
-
-?>

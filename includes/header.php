@@ -9,7 +9,7 @@
 			@import url("css/styles.css");
 		</style>
 		<title>
-			OOJO - <?= $title ?>
+			OOJO <?= $title ?>
 		</title>
 	</head>
 	<body>
