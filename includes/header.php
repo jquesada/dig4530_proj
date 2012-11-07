@@ -7,6 +7,22 @@
 			@import url("css/960.css");
 			@import url("css/styles.css");
 		</style>
+		<!--BEGIN JQUERY SLIDER-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/slides.min.jquery.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#slides').slides({
+					preload: true,
+					play: 5000,
+					pause: 1000,
+					hoverPause: true
+				});
+			});
+		</script>
+<!--END JQUERY SLIDER-->
+
 		<title>OOJO <?= $title ?></title>
 	</head>
 	<body>
