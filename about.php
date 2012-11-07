@@ -28,7 +28,13 @@
 						<h2>About</h2> 
 						<p>Oojo is a web store that offers creative media services at affordable prices. It is your one stop shop for graphics design resources.  Graphic designers can find everything from premade web themes to graphics that are purchasable and ready to use on your website.</p>
 						<p>You don't have to worry about color schemes, html, css, or any of the other hassles that come with building a website. Oojo has it all done for you. Just browse our extensive online catalog of multimedia designs and pick the ones that fit your site best. You can guarantee that what you purchase from Oojo follows all of the current web design standards and trends.</p>
-						<p>Having a web presence is extremely crucial to the success of your business, so why not make it easy on yourself and let us provide you the resources to create a web presence you can be happy with. Our online products are not only high quality and creative, but they are entirely customizable. You can make them fit your business specifically and update content with ease.</p>		
+						<p>Having a web presence is extremely crucial to the success of your business, so why not make it easy on yourself and let us provide you the resources to create a web presence you can be happy with. Our online products are not only high quality and creative, but they are entirely customizable. You can make them fit your business specifically and update content with ease.</p>
+                        <p>Tristan Eason: Project Leader/Design</p>
+                        <p>Justin Quesada: Front-end Developer/Design</p>
+                        <p>Javed Alli: Front-end Developer</p>
+                        <p>Sarah Sheehan: Back-end Developer</p>
+                        <p>Carlos Lopez: Back-end Developer</p>	
+                        <br />	
 				</div>
 			</div>
 <!--END SIDEBAR-->
