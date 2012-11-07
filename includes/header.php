@@ -1,16 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<style type="text/css">
 			@import url("css/reset.css");
 			@import url("css/text.css");
 			@import url("css/960.css");
 			@import url("css/styles.css");
 		</style>
-		<title>
-			OOJO <?= $title ?>
-		</title>
+		<title>OOJO <?= $title ?></title>
 	</head>
 	<body>
 <!--BEGIN HEADER-->
@@ -43,10 +40,9 @@
 							</ul>
 						</div>
 						<div id="search">
-							<form action="#" method="get" name="search_form" id="search_form">
-								<input type="text" name="search" value="Search" />
-								<input name="submit" type="submit" class="submit" id="submit" value="" />
-
+							<form action="scripts/search.php" method="get" name="search_form" id="search_form">
+								<input type="text" name="search" placeholder="Search" />
+								<input type="submit" class="submit" id="submit" value="" />
 							</form>
 						</div>
 					</div>
