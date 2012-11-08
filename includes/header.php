@@ -1,3 +1,6 @@
+<?php 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -32,11 +35,23 @@
 				<div class="grid_12" id="account_nav">
 					<div id="log_in">
 						<ul>
-							<li><a href="client.php">My Account</a></li>
 							<li><a href="cart.php">My Cart</a></li>
-							<li><a href="login.php">Log In</a></li>
-							<li><a href="login.php">Register</a></li>
-							<li class="noborder"><a href="admin.php">Admin</a></li>
+							<?php 
+
+							if($_SESSION['loggedIn']){
+								print "<li><a href='client.php'>My Account</a></li>";
+								print "<li><a href='scripts/logout.php'>Log Out</a></li>";
+
+								if($_SESSION['userPermissions'] == 1 || $_SESSION['userPermissions'] == 2){
+									print "<li><a href='admin.php'>Admin</a></li>";
+								}
+							}
+							else{
+								print "<li><a href='login.php'>Log In</a></li>";
+								print "<li><a href='register.php'>Register</a></li>";
+							}
+							
+							?>
 						</ul>
 					</div>
 				</div>

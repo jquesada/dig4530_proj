@@ -1,8 +1,8 @@
 <?php 
-	error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 	$title = "Catalog";
 	include_once('includes/header.php');
 	include_once('config/conn.php');
+	include_once('scripts/get_product_info.php');
 ?>
 
 <!--BEGIN SIDEBAR-->
@@ -23,46 +23,48 @@
 		<h2>Catalog</h2> 
 		<h3>Wordpress</h3>
 		<?php
-			$q="select * from products";
 
-			$result = mysql_query($q, $db);
+			$q = $conn->query("select * from products");          
+        	$q->setFetchMode(PDO::FETCH_OBJ);
 
-			if(!mysql_num_rows($result))
-			{
-				print "<p>No records found.</p>";
-			}
-			else
-			{
-				while($row = mysql_fetch_array($result)) { 
-					$prodID = $row['id'];     
-					$productImage = $row['image'];
-					$productTitle = $row['name'];
-					$productPrice = $row['price'];
+			while ($product = $q->fetch()) { 
 
-					$cat_q = "select * from categories where product_id = $prodID";
-					$cat_result = mysql_query($cat_q, $db);
+				$prodID = $product->id;     
+				$productImage = $product->image;
+				$productTitle = $product->name;
+				$productPrice = $product->price;
 
-					$categories = array();
-					while($cat_row = mysql_fetch_array($cat_result)){
-						$category = $cat_row['category_name'];
-						array_push($categories, $category);
-					}
-					
-					$productCategories = implode(", ", $categories);
-
-					print "<div class='catalog_product'>";
-					print "<a title='Click to view more information.' href='product_detail.php?id=".$prodID."'><img width='303' height='293' src='img/product_images/".$productImage."' alt='".$productTitle."'/></a>";
-					print "<div class='product_box'>";
-					print "<h3>".$productTitle."</h3>";
-					print "<h4>$".$productPrice."</h4>";
-					print "Categories: ".$productCategories."<br />";
-					print "<img src='img/rating.png' alt='Rating' /><br />
-						<a href='cart.php'><img class='right' src='img/addcart.jpg' alt='Add to Cart'/></a>
-						<div class='clear'>
-						</div>
-						</div>
-						</div>";		
+				//if there is no image in the db, set a placeholder
+				if($productImage == ''){
+					$productImage = 'placeholder.png';
 				}
+
+				//get the product's categories  
+				$categories = getProductCategories($prodID, $conn);
+				$productCategories = implode(", ", $categories);
+
+				//get the product's average rating
+				$rating = getProductRatingStars($prodID, $conn);
+					
+				//print all the infos
+				print "<div class='catalog_product'>";
+				print "<a title='Click to view more information.' href='product_detail.php?id=".$prodID."'><img width='303' height='293' src='img/product_images/".$productImage."' alt='".$productTitle."'/></a>";
+				print "<div class='product_box'>";
+				print "<h3>".$productTitle."</h3>";
+				print "<h4>$".$productPrice."</h4>";
+				print "<p>Categories: ".$productCategories."</p>";
+
+				//print rating stars
+				for($i = 0; $i < $rating; $i++){
+					print "*";
+				}
+					
+				print "<p><a href='cart.php'><img class='right' src='img/addcart.jpeg' alt='Add to Cart'/></a></p>
+					<div class='clear'>
+					</div>
+					</div>
+					</div>";		
+				
 			}
 		?>
 	</div>

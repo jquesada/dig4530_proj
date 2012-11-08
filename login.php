@@ -5,13 +5,13 @@
 <!--BEGIN SIDEBAR-->
 			<div class="container_12">
 <!--BEGIN CONTENT-->
-				<div class="grid_10" id="content">
+				<div class="grid_12" id="content">
 					<h2>Log In</h2> 
 						
-					<form action="scripts/login.php" method="post" name="login_form" id="login_form">
-						<input type="text" name="email" placeholder="E-mail" />
-						<input type="password" name="password" placeholder="Password" />
-						<input type="submit" id="submit" value="Log In" />
+					<form action="scripts/user_login.php" method="post" name="login_form" id="login_form">
+						<p><input type="text" name="email" placeholder="E-mail" /></p>
+						<p><input type="password" name="password" placeholder="Password" /></p>
+						<p><input type="submit" id="submit" value="Log In" /></p>
 					</form>		
 				</div>
 			</div>
