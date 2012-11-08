@@ -7,7 +7,8 @@
 							<a href="catalog.php">Catalog</a>
 							<a href="about.php">About</a>
 							<a href="about.php">Contact Us</a>
-							<a href="terms.php">Terms and Conditions</a>
+							<a href="policies.php">Policies</a>
+							<a href="privacy.php">Privacy</a>
 						</div>
 						<div class="footer_box">
 							<a href="cart.php">My Cart</a>
