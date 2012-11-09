@@ -1,6 +1,8 @@
 <?php 
 	$title = "Home";
 	include_once('includes/header.php');
+	include_once('config/conn.php');
+	include_once('scripts/get_product_info.php');
 ?>
 
 <!--BEGIN SLIDER-->
@@ -44,28 +46,19 @@
 				<div class="grid_9" id="content">
 					<p>Welcome to <strong>OOJO</strong>! We are the online web store for all your graphic resource needs!</p>
 					<div id="featured_product">
-						<h2>Featured Products</h2>
-						<?php
-							include("mysql.php");
+						<h2>Featured Product</h2>
+						
+							<?php
+							$product = getFeaturedProduct($conn);
 
-
-							$featured=mysql_query("SELECT ProductName,Description,Category,Price,ProductImage FROM Products WHERE SKU = '3'");
-							$featured_row= mysql_fetch_row($featured);
-
-							$featured_title= $featured_row[0];
-							$featured_description= $featured_row[1];
-							$featured_category= $featured_row[2];
-							$featured_price= $featured_row[3];
-							$featured_image= $featured_row[4];
-
-							print "<img class='center' src='".$featured_image."' alt='".$featured_title."'/>";
+							print "<img class='center' src='".$product['image']."' alt='".$product['name']."'/>";
 							print "<div class='featured_box'>";
-							print "<h3>".$featured_title."</h3>";
-							print $featured_description."<br />";
-							print "<h4>$".$featured_price."</h4>";
-							print "Category:".$featured_category."<br />";
+							print "<h3>".$product['name']."</h3>";
+							print "<p>".$product['desc']."</p>";
+							print "<h4>$".$product['price']."</h4>";
+							//print "Category:".$featured_category."<br />";
 							print "<img src='img/rating.png' alt='Rating'/><br />";
-							print "<a href='cart.php'><img class='right' src='img/addcart.jpg' alt='Add to Cart'/></a><div class='clear'>";
+							print "<a href='scripts/add_to_cart.php'><img class='right' src='img/addcart.jpeg' alt='Add to Cart'/></a><div class='clear'>";
 							print "</div>";
 							print "</div>";
 						?>

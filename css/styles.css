@@ -264,6 +264,7 @@ div.catalog_product
 img.right
 {
 	float: right;
+	padding-right: 20px;
 }
 h4
 {
@@ -298,4 +299,55 @@ div#footer
 .footer_box a:hover
 {
 	color: #f0f0f0;
+}
+
+.cartCheckout, .editTable{
+	width: 95%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border-bottom: 8px solid #35BFFF;
+	margin-bottom: 20px;
+}
+.cartCheckout th, .editTable th{
+	background: #35BFFF;
+	color: #fff;
+	padding: 10px;
+}
+.cartCheckout img{
+	border: 1px solid #CCCCCC;
+    padding: 5px;
+	height: 180px;
+    width: 240px;
+}
+.cartDesc{
+	width: 200px;
+}
+.cartCheckout td, .editTable td{
+	padding: 20px;
+}
+.cartCheckout input{
+	width: 50px;
+}
+#cartSubmit{
+	border: none;
+	float: right;
+	background: #1C140D;
+}
+.darkRow{
+	background: #DBDBDB;
+}
+.button{
+	padding: 9px;
+    background: #35BFFF;	
+    font-size: 16px;
+    color: #FFF;
+    text-decoration: none;  
+	margin-left: 10px;
+}
+.total{
+	text-transform: uppercase;
+	text-align: right;
+	padding-right: 20px;
+	color: #35BFFF;
+	font-size: 20px;
 }
