@@ -9,7 +9,7 @@
 try 
 {
 	$host = "sulley.cah.ucf.edu";
-	$dbname = "ju773928"
+	$dbname = "ju773928";
     $username = "ju773928";
     $password = "knights123!";    
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
