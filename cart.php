@@ -42,7 +42,7 @@ include_once('includes/header.php');
 					print "<td class='cartDesc'>". $item['desc'] ." </td>";
 					print "<td>". $item['price'] ." </td>";
 					print "<td><a href='scripts/remove_from_cart.php?id=". $item['id'] ."' class='button'>Remove </a> </td>";
-					print "<tr>";
+					print "</tr>";
 					$i++;
 					$total += $item['price'];
 				}

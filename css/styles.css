@@ -301,14 +301,14 @@ div#footer
 	color: #f0f0f0;
 }
 
-.cartCheckout{
+.cartCheckout, .editTable{
 	width: 95%;
 	margin: 0 auto;
 	border-collapse: collapse;
 	border-bottom: 8px solid #35BFFF;
 	margin-bottom: 20px;
 }
-.cartCheckout th, .adminTable th{
+.cartCheckout th, .editTable th{
 	background: #35BFFF;
 	color: #fff;
 	padding: 10px;
@@ -322,7 +322,7 @@ div#footer
 .cartDesc{
 	width: 200px;
 }
-.cartCheckout td, .adminTable td{
+.cartCheckout td, .editTable td{
 	padding: 20px;
 }
 .cartCheckout input{

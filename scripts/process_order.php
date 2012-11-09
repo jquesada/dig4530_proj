@@ -35,3 +35,5 @@ foreach ($cartItems as $item) {
 	            ));
 
 }
+
+header('Location:https://www.paypal.com');

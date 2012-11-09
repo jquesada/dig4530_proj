@@ -51,11 +51,26 @@ if (isset($_GET['fromClientPage'])) { ?>
 		} ?>
 		<form action="scripts/user_edit_account.php" method="post" name="edit_account_form" id="edit_account_form">
 			<input type="hidden" name="userID" value="<?php print $id; ?>" /> 
-			<p><input type="text" name="address" placeholder="<?php print $address; ?>" /></p>
-			<p><input type="text" name="city" placeholder="<?php print $city; ?>" /></p>
-			<p><input type="text" name="state" placeholder="<?php print $state; ?>" /></p>
-			<p><input type="text" name="zip" placeholder="<?php print $zip; ?>" /></p>
-			<p><input type="text" name="phone" placeholder="<?php print $phone; ?>" /></p>
+			<p>
+				<label for="address">Address:</label><br/>
+				<input type="text" name="address" placeholder="<?php print $address; ?>" />
+			</p>
+			<p>
+				<label for="city">City:</label><br/>
+				<input type="text" name="city" placeholder="<?php print $city; ?>" />
+			</p>
+			<p>
+				<label for="state">State:</label><br/>
+				<input type="text" name="state" placeholder="<?php print $state; ?>" />
+			</p>
+			<p>
+				<label for="zip">Zip:</label><br/>
+				<input type="text" name="zip" placeholder="<?php print $zip; ?>" />
+			</p>
+			<p>
+				<label for="phone">Phone:</label><br/>
+				<input type="text" name="phone" placeholder="<?php print $phone; ?>" />
+			</p>
 			<p><input type="submit" class="submit" id="register" value="Update Account" /></p>
 		</form>
 
