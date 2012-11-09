@@ -45,6 +45,7 @@ else{
 
 		//grab the id of the user that was just entered in the db
 		$user_id = $conn->lastInsertId();
+		$_SESSION['userID'] = $user_id;
 
         //add the user's permissions - everyone starts out as a basic user 
 		$stmt2 = $conn->prepare("insert into user_permissions (user_id, permission_id) values (:user_id, :permission_id)"); 
@@ -60,5 +61,6 @@ else{
 
 //set the logged in and permission session and send the user to the edit account page 
 $_SESSION['loggedIn'] = true;
+$_SESSION['userName'] = $first;
 $_SESSION['userPermissions'] = 3;
-header("Location: ../edit_account.php?loginSuccess=true"); 
+header("Location: ../edit_account.php"); 

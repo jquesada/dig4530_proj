@@ -1,4 +1,23 @@
 <?php
+function getProductInfo($id, $conn){
+
+	$q = $conn->query("select * from products where id = $id");          
+    $q->setFetchMode(PDO::FETCH_OBJ);
+
+    //loop though the results of query and add to array
+	while ($product = $q->fetch()) { 
+		$productInfo = array(
+			"id"    => $product->id,
+			"sku"	=> $product->sku,
+		    "name"  => $product->name,
+		    "desc"  => $product->desc,
+		    "price" => $product->price,
+		    "image" => $product->image
+		);
+	}
+
+	return $productInfo;
+}
 
 //get all categories associated with a product and return them as an array
 function getProductCategories($id, $conn){
@@ -50,6 +69,7 @@ function getFeaturedProduct($conn){
 	while ($product = $q->fetch()) { 
 		$featured = array(
 			"id"    => $product->id,
+			"sku"	=> $product->sku,
 		    "name"  => $product->name,
 		    "desc"  => $product->desc,
 		    "price" => $product->price,

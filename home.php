@@ -58,7 +58,7 @@
 							print "<h4>$".$product['price']."</h4>";
 							//print "Category:".$featured_category."<br />";
 							print "<img src='img/rating.png' alt='Rating'/><br />";
-							print "<a href='cart.php'><img class='right' src='img/addcart.jpg' alt='Add to Cart'/></a><div class='clear'>";
+							print "<a href='scripts/add_to_cart.php'><img class='right' src='img/addcart.jpeg' alt='Add to Cart'/></a><div class='clear'>";
 							print "</div>";
 							print "</div>";
 						?>

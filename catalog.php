@@ -59,7 +59,7 @@
 					print "*";
 				}
 					
-				print "<p><a href='cart.php'><img class='right' src='img/addcart.jpeg' alt='Add to Cart'/></a></p>
+				print "<p><a href='scripts/add_to_cart.php?id=".$prodID."'><img class='right' src='img/addcart.jpeg' alt='Add to Cart'/></a></p>
 					<div class='clear'>
 					</div>
 					</div>

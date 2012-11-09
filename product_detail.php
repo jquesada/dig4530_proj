@@ -13,44 +13,37 @@ $prodID = mysql_real_escape_string($_GET['id']);
 <!--BEGIN CONTENT-->
 	<div class="grid_12" id="content">
 	<?php
-		$q = $conn->query("select * from products where id = $prodID");          
-        $q->setFetchMode(PDO::FETCH_OBJ);
+		$product = getProductInfo($prodID, $conn);
 
-			while ($product = $q->fetch()) { 
+		//if there is no image in the db, set a placeholder
+		if($product['image'] == ''){
+			$productImage = 'placeholder.png';
+		}
+		else{
+			$productImage = $product['image'];
+		}
 
-				$prodID = $product->id;     
-				$productImage = $product->image;
-				$productDesc = $product->desc;
-				$productTitle = $product->name;
-				$productPrice = $product->price;
+		//get the product's categories  
+		$categories = getProductCategories($prodID, $conn);
+		$productCategories = implode(", ", $categories);
 
-				//if there is no image in the db, set a placeholder
-				if($productImage == ''){
-					$productImage = 'placeholder.png';
-				}
-
-				//get the product's categories  
-				$categories = getProductCategories($prodID, $conn);
-				$productCategories = implode(", ", $categories);
-
-				//get the product's average rating
-				$rating = getProductRatingStars($prodID, $conn);
+		//get the product's average rating
+		$rating = getProductRatingStars($prodID, $conn);
 					
-				print "<h2>Product Detail: ".$productTitle."</h2>";	
-				print "<p><img src='img/product_images/".$productImage."' alt='".$productTitle."'/></p>";
-				print "<h3>".$productTitle."</h3>";
-				print "<p>".$productDesc."</p>";
-				print "<h4>$".$productPrice."</h4>";
-				print "<p>Categories: ".$productCategories."</p>";
+		print "<h2>Product Detail: ".$product['name']."</h2>";	
+		print "<p><img src='img/product_images/".$productImage."' alt='".$product['name']."'/></p>";
+		print "<h3>".$product['name']."</h3>";
+		print "<p>".$product['desc']."</p>";
+		print "<h4>$".$product['price']."</h4>";
+		print "<p>Categories: ".$productCategories."</p>";
 
-				//print rating stars
-				for($i = 0; $i < $rating; $i++){
-					print "*";
-				}
+		//print rating stars
+		for($i = 0; $i < $rating; $i++){
+			print "*";
+		}
 					
-				print "<p><a href='cart.php'><img src='img/addcart.jpeg' alt='Add to Cart'/></a></p>";		
-				
-			}
+		print "<p><a href='scripts/add_to_cart.php?id=$prodID'><img src='img/addcart.jpeg' alt='Add to Cart'/></a></p>";						
+			
 	?> 
 	</div>
 </div>	
